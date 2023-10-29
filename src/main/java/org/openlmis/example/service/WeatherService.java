@@ -15,7 +15,6 @@
 
 package org.openlmis.example.service;
 
-
 import com.google.gson.JsonObject;
 
 import org.openlmis.example.util.WeatherApiClient;
@@ -30,8 +29,8 @@ public class WeatherService {
 
   @Autowired
   public WeatherService(@Value("${openWeatherMap.host}") String host,
-                        @Value("${openWeatherMap.port}") Integer port,
-                        @Value("${openWeatherMap.apiKey}") String apiKey) {
+      @Value("${openWeatherMap.port}") Integer port,
+      @Value("${openWeatherMap.apiKey}") String apiKey) {
     this.apiClient = new WeatherApiClient(host, port, apiKey);
   }
 

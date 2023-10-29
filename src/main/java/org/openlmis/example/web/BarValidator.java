@@ -15,7 +15,6 @@
 
 package org.openlmis.example.web;
 
-
 import org.openlmis.example.domain.Bar;
 
 import javax.validation.ConstraintValidator;
@@ -35,9 +34,12 @@ public class BarValidator implements ConstraintValidator<BarValidation, Bar> {
   private BarValidation barValidation;
 
   /*
-      Although we're require to implement it, we don't make much use of the initialize() method
-      in this example. It allows us to access user-defined values aptionally associated with our
-      custom annotation. In our case, though, the annotation expects no such configuration.
+   * Although we're require to implement it, we don't make much use of the
+   * initialize() method
+   * in this example. It allows us to access user-defined values aptionally
+   * associated with our
+   * custom annotation. In our case, though, the annotation expects no such
+   * configuration.
    */
   @Override
   public void initialize(BarValidation barValidation) {
