@@ -29,6 +29,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.UUID;
+import java.util.Optional;
 
 /**
  * Controller handling the /books resource.
@@ -57,11 +58,11 @@ public class BookController extends BaseController {
    */
   @RequestMapping(path = "/books/{id}", method = RequestMethod.GET)
   public ResponseEntity<?> getBookById(@PathVariable("id") UUID id) {
-    Book book = repository.findOne(id);
-    if (book == null) {
-      return new ResponseEntity(HttpStatus.NOT_FOUND);
+    Optional<Book> bookOptional = repository.findById(id);
+    if (bookOptional.isPresent()) {
+      return new ResponseEntity<>(bookOptional.get(), HttpStatus.OK);
     } else {
-      return new ResponseEntity<>(book, HttpStatus.OK);
+      return new ResponseEntity(HttpStatus.NOT_FOUND);
     }
   }
 

@@ -7,4 +7,6 @@
   --source-file src/main/resources/messages_en.properties
 
 # Run Gradle build
-gradle clean generateBuildInfo build
+rm -rf ~/.gradle/caches/*/b9a74716da7699b23e293944812f2443/
+rm -rf ~/.gradle/caches/
+gradle clean build 
