@@ -13,7 +13,7 @@ services:
     volumes:
       - /var/run/docker.sock:/tmp/docker.sock
   example:
-    image: openlmis/example
+    image: openlmis/example:latest
     links:
       - db
       - log
