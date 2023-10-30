@@ -99,6 +99,8 @@ dependencies {
     //checkstyle "com.github.sevntu.checkstyle:sevntu-checks:1.13.4",
     //           "com.github.sevntu.checkstyle:sevntu-checkstyle-maven-plugin:1.13.4"
 
+    implementation 'org.springframework.integration:spring-integration-jdbc:5.5.4'
+
 }
 
 idea {
